@@ -9,18 +9,18 @@ import {
   LastNameField,
 } from '../../molecules/fields/LastNameField'
 
-type FormValues = FirstNameType & LastNameType
+export type PersonFormValues = FirstNameType & LastNameType
 
 interface Props {
-  defaultValues?: Partial<FormValues>
+  defaultValues?: Partial<PersonFormValues>
 }
 
 export const PersonForm = ({ defaultValues }: Props) => {
-  const form = useForm<FormValues>({
+  const form = useForm<PersonFormValues>({
     defaultValues,
   })
 
-  const onSubmit = () => '' // replace with hook
+  const onSubmit = (v: any) => console.log(v) // replace with hook
 
   return (
     <FormProvider {...form}>
