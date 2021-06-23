@@ -4,6 +4,7 @@ import { FormWithAsyncDefaultValuesPage } from './components/pages/FormWithAsync
 import { Home } from './components/pages/Home'
 import { SimpleFormPage } from './components/pages/SimpleForm'
 import { AppProvider } from './state/AppContext'
+import { ComponentsWithAsyncDefaultValuesPage } from './components/pages/ComponentsWithAsyncDefaultValues'
 
 export const Routes = () => (
   <Router>
@@ -21,6 +22,9 @@ export const Routes = () => (
         </Route>
         <Route path="/form-with-async-default-values" exact>
           <FormWithAsyncDefaultValuesPage />
+        </Route>
+        <Route path="/components-with-async-default-values" exact>
+          <ComponentsWithAsyncDefaultValuesPage />
         </Route>
       </Switch>
     </AppProvider>

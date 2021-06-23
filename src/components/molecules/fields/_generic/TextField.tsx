@@ -9,9 +9,16 @@ type Props = {
   label: string
   helpText?: string
   rules?: RegisterOptions
+  defaultValue?: string
 }
 
-export const TextField = ({ id, label, helpText, rules }: Props) => {
+export const TextField = ({
+  id,
+  label,
+  helpText,
+  rules,
+  defaultValue = '',
+}: Props) => {
   const {
     control,
     formState: { errors },
@@ -28,6 +35,7 @@ export const TextField = ({ id, label, helpText, rules }: Props) => {
         control={control}
         name={id}
         rules={rules}
+        defaultValue={defaultValue}
         render={({
           field: { onChange, onBlur, value, name, ref },
           fieldState: { invalid },

@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react'
-import { ErrorBoundary } from 'react-error-boundary'
-import { useQuery } from 'react-query'
+import React from 'react'
+// import { ErrorBoundary } from 'react-error-boundary'
+// import { useQuery } from 'react-query'
 import { Link } from 'react-router-dom'
-import { useApp } from '../../../state/AppContext'
-import { get } from '../../../utils/useFetch'
-import { useTodos } from '../../../utils/useTodos'
-import { TextField } from '../../molecules/fields/_generic/TextField'
+// import { useApp } from '../../../state/AppContext'
+// import { get } from '../../../utils/useFetch'
+// import { useTodos } from '../../../utils/useTodos'
+// import { TextField } from '../../molecules/fields/_generic/TextField'
 
 const Fallback = () => <div>something went wrong</div>
 
@@ -37,6 +37,10 @@ export const Home = () => {
       <br />
       <Link to="/form-with-async-default-values">
         Form with async default values
+      </Link>
+      <br />
+      <Link to="/components-with-async-default-values">
+        Components with async default values
       </Link>
       {/* <form>
         <TextInput id="firstName" label="First name" />
