@@ -5,6 +5,7 @@ import { Home } from './components/pages/Home'
 import { SimpleFormPage } from './components/pages/SimpleForm'
 import { AppProvider } from './state/AppContext'
 import { ComponentsWithAsyncDefaultValuesPage } from './components/pages/ComponentsWithAsyncDefaultValues'
+import { ReadonlyFormPage } from './components/pages/ReadonlyForm'
 
 export const Routes = () => (
   <Router>
@@ -25,6 +26,9 @@ export const Routes = () => (
         </Route>
         <Route path="/components-with-async-default-values" exact>
           <ComponentsWithAsyncDefaultValuesPage />
+        </Route>
+        <Route path="/read-only-form" exact>
+          <ReadonlyFormPage />
         </Route>
       </Switch>
     </AppProvider>

@@ -42,6 +42,8 @@ export const Home = () => {
       <Link to="/components-with-async-default-values">
         Components with async default values
       </Link>
+      <br />
+      <Link to="/read-only-form">Read only form</Link>
       {/* <form>
         <TextInput id="firstName" label="First name" />
         <TextInput id="lastName" label="Last name" />

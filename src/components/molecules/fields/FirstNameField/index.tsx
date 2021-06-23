@@ -11,6 +11,15 @@ export interface FirstNameType {
   firstName: string
 }
 
-export const FirstNameField = () => (
-  <TextField id={ID} label="First name" rules={validators} />
+interface Props {
+  disabled?: boolean
+}
+
+export const FirstNameField = ({ disabled }: Props) => (
+  <TextField
+    id={ID}
+    label="First name"
+    rules={validators}
+    disabled={disabled}
+  />
 )

@@ -10,6 +10,7 @@ type Props = {
   helpText?: string
   rules?: RegisterOptions
   defaultValue?: string
+  disabled?: boolean
 }
 
 export const TextField = ({
@@ -18,6 +19,7 @@ export const TextField = ({
   helpText,
   rules,
   defaultValue = '',
+  disabled = false,
 }: Props) => {
   const {
     control,
