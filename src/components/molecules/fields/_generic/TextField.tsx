@@ -2,6 +2,7 @@ import { TextField as MuiTextField } from '@material-ui/core'
 import { Controller, RegisterOptions, useFormContext } from 'react-hook-form'
 import { ErrorText } from '../../../atoms/error-text'
 import { HelpText } from '../../../atoms/help-text'
+import { TickEnd } from '../../adornments/TickEnd'
 import './TextField.css'
 
 type Props = {
@@ -10,6 +11,7 @@ type Props = {
   helpText?: string
   rules?: RegisterOptions
   defaultValue?: string
+  showValidationTick?: boolean
   disabled?: boolean
 }
 
@@ -19,6 +21,7 @@ export const TextField = ({
   helpText,
   rules,
   defaultValue = '',
+  showValidationTick = false,
   disabled = false,
 }: Props) => {
   const {
@@ -41,22 +44,33 @@ export const TextField = ({
         render={({
           field: { onChange, onBlur, value, name, ref },
           fieldState: { invalid },
-        }) => (
-          <MuiTextField
-            id={id}
-            label={label}
-            variant="outlined"
-            error={invalid} // pass on error state to Mui
-            inputProps={{
-              'aria-describedby': `${helpTextId} ${errorTextId}`, // point to our error text and help text ID's
-            }}
-            onChange={onChange}
-            onBlur={onBlur}
-            value={value}
-            name={name}
-            ref={ref}
-          />
-        )}
+        }) => {
+          const isValid = value && !invalid
+          const showEndTick = showValidationTick && isValid
+
+          return (
+            <MuiTextField
+              id={id}
+              label={label}
+              variant="outlined"
+              error={invalid} // pass on error state to Mui
+              inputProps={{
+                // props that get passed down to the actual <input>
+                'aria-describedby': `${helpTextId} ${errorTextId}`, // point to our error text and help text ID's
+              }}
+              InputProps={{
+                // props that get passed to the underlying <MuiInput>
+                endAdornment: showEndTick ? <TickEnd /> : undefined,
+              }}
+              onChange={onChange}
+              onBlur={onBlur}
+              value={value}
+              name={name}
+              ref={ref}
+              disabled={disabled}
+            />
+          )
+        }}
       />
       <ErrorText id={errorTextId} error={error?.message} />
       <HelpText id={helpTextId} message={helpText} />

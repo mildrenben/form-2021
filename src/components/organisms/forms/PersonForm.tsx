@@ -18,6 +18,8 @@ interface Props {
 export const PersonForm = ({ defaultValues }: Props) => {
   const form = useForm<PersonFormValues>({
     defaultValues,
+    mode: 'onBlur',
+    reValidateMode: 'onChange',
   })
 
   const onSubmit = (v: any) => console.log(v) // replace with hook
