@@ -1,5 +1,5 @@
 import { FormWithAsyncDefaultValues } from '../../templates/FormWithAsyncDefaultValues'
-import { useBlogPost } from '../../../utils/useBlogPost'
+import { useBlogPost } from '../../../utils/data/useBlogPost'
 
 export const FormWithAsyncDefaultValuesPage = () => {
   const { isLoading, isError, data, error } = useBlogPost()

@@ -44,6 +44,8 @@ export const Home = () => {
       </Link>
       <br />
       <Link to="/read-only-form">Read only form</Link>
+      <br />
+      <Link to="/edit-cancel-mode-form">Edit cancel mode form</Link>
       {/* <form>
         <TextInput id="firstName" label="First name" />
         <TextInput id="lastName" label="Last name" />

@@ -6,6 +6,7 @@ import { SimpleFormPage } from './components/pages/SimpleForm'
 import { AppProvider } from './state/AppContext'
 import { ComponentsWithAsyncDefaultValuesPage } from './components/pages/ComponentsWithAsyncDefaultValues'
 import { ReadonlyFormPage } from './components/pages/ReadonlyForm'
+import { EditCancelModePage } from './components/pages/EditCancelMode'
 
 export const Routes = () => (
   <Router>
@@ -29,6 +30,9 @@ export const Routes = () => (
         </Route>
         <Route path="/read-only-form" exact>
           <ReadonlyFormPage />
+        </Route>
+        <Route path="/edit-cancel-mode-form" exact>
+          <EditCancelModePage />
         </Route>
       </Switch>
     </AppProvider>

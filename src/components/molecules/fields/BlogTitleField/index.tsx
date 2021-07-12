@@ -1,5 +1,5 @@
 import { COPY } from '../../../../constants/copy'
-import { useBlogPost } from '../../../../utils/useBlogPost'
+import { useBlogPost } from '../../../../utils/data/useBlogPost'
 import { TextField } from '../_generic/TextField'
 
 const ID = 'blogTitle'
