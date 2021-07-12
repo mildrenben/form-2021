@@ -1,15 +1,12 @@
+import { EditModeProvider } from '../../../state/EditModeContext'
 import { EditCancelMode } from '../../templates/EditCancelMode'
 
 export const EditCancelModePage = () => {
-  // get initial values data
-
   return (
     <div>
-      {' '}
-      {
-        // replace with some page container
-      }
-      <EditCancelMode />
+      <EditModeProvider>
+        <EditCancelMode />
+      </EditModeProvider>
     </div>
   )
 }

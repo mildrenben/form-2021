@@ -1,13 +1,12 @@
-import { MouseEvent } from 'react'
 import { Button } from '@material-ui/core'
+import { useEditMode } from '../../../state/EditModeContext'
 
-interface Props {
-  onClick?: (event: MouseEvent<HTMLButtonElement>) => void
-  isEditMode: boolean
-}
+export const EditModeButton = () => {
+  const { isEditMode, setIsEditMode } = useEditMode()
 
-export const EditModeButton = ({ onClick = () => {}, isEditMode }: Props) => {
   if (isEditMode) return null
+
+  const onClick = () => setIsEditMode(true)
 
   return (
     <Button variant="contained" color="inherit" onClick={onClick}>
